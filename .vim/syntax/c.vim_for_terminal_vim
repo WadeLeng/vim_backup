@@ -1,0 +1,19 @@
+"highlight Functions
+syn match cFuntions display "[a-zA-Z_]\{-1,}\s\{-0,}(\{1}"ms=s,me=e-1
+hi def link cFuntions Title
+
+syntax keyword Boolean true false NULL TRUE FALSE
+syntax keyword Normal sizeof
+syntax keyword Statement stderr stdin stdout
+
+syntax match	myBracket "[\[\]]"
+syntax match	myBlock "[{}]"
+hi link myBracket Constant
+hi myBlock guifg=white	guibg=NONE	gui=none
+
+syntax match	myOperator display "[-+&|<>=!\/~.,;:*%&^?()@]"
+syntax region	myComment start="\/\*" end="\*\/"
+syntax match	myComment "\/\/.*$"
+
+hi link myOperator Operator
+hi link myComment Comment
